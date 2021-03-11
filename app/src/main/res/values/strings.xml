@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App Debug</string>
+    <string name="bt_str_debug">Debug</string>
+    <string name="bt_str_error_log">Error Log</string>
+    <string name="bt_str_info">Info</string>
+    <string name="bt_str_warning">Warning</string>
+    <string name="bt_str_verbose">Verbose</string>
+</resources>
