@@ -26,16 +26,20 @@ class MainActivity : AppCompatActivity() {
             Log.d("click","Opa! cliquei no debug")
         }
         bt_error?.setOnClickListener {
+            var message:String = ""
 //            click++;
 //            Log.e("click","Opa! Houve $click clique no botão.")
             try {
 
                 val list = listOf<Int>(2,4,6)
                 val a = list[6]
-
-            } catch (e: NullPointerException){
-                val x = 0
+                message = "Entrou no try"
+            } catch (e: IndexOutOfBoundsException){
+                message = "Entrou no catch certo"
+            } catch (i: NullPointerException){
+                message = "Entrou no catch errado"
             }finally {
+                input_debug?.setText(message)
                 val x = 35
             }
         }
