@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setLogListener()
         val currentThread = Thread.currentThread()
+        currentThread.setUncaughtExceptionHandler { t, e ->
+            val x = e.message
+            val cause = e.cause
+        }
     }
 
     private fun setLogListener(){
@@ -29,8 +33,10 @@ class MainActivity : AppCompatActivity() {
                 val list = listOf<Int>(2,4,6)
                 val a = list[6]
 
-            } catch (e: IndexOutOfBoundsException){
+            } catch (e: NullPointerException){
                 val x = 0
+            }finally {
+                val x = 35
             }
         }
         bt_info.setOnClickListener { Log.i("click","Opa! cliquei no info") }
